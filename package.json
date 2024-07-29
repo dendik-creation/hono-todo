@@ -1,0 +1,21 @@
+{
+  "name": "hono-todo",
+  "description": "Simple Hono Todo App",
+  "version": "1.0.0",
+  "author": {
+    "name": "Dendi' Setiawan",
+    "url": "https://github.com/dendik-creation"
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.12.0",
+    "ejs": "^3.1.10",
+    "hono": "^4.5.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "tsx": "^4.7.1"
+  }
+}
