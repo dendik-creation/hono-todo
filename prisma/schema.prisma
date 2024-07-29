@@ -1,0 +1,34 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:../src/database/database.sqlite"
+}
+
+model User {
+  id    Int     @id @default(autoincrement())
+  username String @unique
+  full_name  String
+  gender String?
+  password String
+  todos Todo[]
+  created_at String?
+}
+
+model Todo {
+  id    Int     @id @default(autoincrement())
+  user  User    @relation(fields: [user_id], references: [id])
+  user_id Int
+  title String
+  description String?
+  done  Boolean @default(false)
+  created_at String?
+}
